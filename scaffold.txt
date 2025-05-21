@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=.\sqlexpress;Initial Catalog=maribeth_store_db;Integrated Security=True;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models -ContextDir . -project GLP.Basecode.API.SariSariStoreProduct -f

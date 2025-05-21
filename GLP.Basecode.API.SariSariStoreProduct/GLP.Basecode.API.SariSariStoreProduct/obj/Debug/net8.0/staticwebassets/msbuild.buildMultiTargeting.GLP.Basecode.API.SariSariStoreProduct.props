@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GLP.Basecode.API.SariSariStoreProduct.props" />
+</Project>

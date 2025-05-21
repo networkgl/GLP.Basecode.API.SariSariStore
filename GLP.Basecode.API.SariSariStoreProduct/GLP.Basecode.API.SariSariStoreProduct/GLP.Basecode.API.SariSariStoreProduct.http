@@ -1,0 +1,6 @@
+@GLP.Basecode.API.SariSariStoreProduct_HostAddress = http://localhost:5023
+
+GET {{GLP.Basecode.API.SariSariStoreProduct_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,214 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\repository\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\repository\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\repository\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\repository\\categorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\models\\custommodel\\productinputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\models\\custommodel\\productinputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\models\\custommodel\\categoryinputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\models\\custommodel\\categoryinputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\contracts\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\contracts\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|c:\\users\\gian lloyd\\source\\repos\\glp.basecode.api.sarisaristoreproduct\\glp.basecode.api.sarisaristoreproduct\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53A3200-7C4B-428A-8D27-038075CE5AFC}|GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj|solutionrelative:glp.basecode.api.sarisaristoreproduct\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Repository\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Repository\\BaseRepository.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Repository\\BaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:20:54.004Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\BaseController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:19:33.303Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Contracts\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Contracts\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Contracts\\IBaseRepository.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Contracts\\IBaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:19:10.355Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:23:15.95Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductManager.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Repository\\ProductManager.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Repository\\ProductManager.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Repository\\ProductManager.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Repository\\ProductManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:24:08.303Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Repository\\CategoryManager.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Repository\\CategoryManager.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Repository\\CategoryManager.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Repository\\CategoryManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:49:00.63Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:48:21.599Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoryInputModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\CategoryInputModel.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\CategoryInputModel.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\CategoryInputModel.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\CategoryInputModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:57:37.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\Category.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:57:21.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductInputModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\ProductInputModel.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\ProductInputModel.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\ProductInputModel.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\ProductInputModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:44:19.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Models\\Product.cs",
+              "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:43:56.521Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
