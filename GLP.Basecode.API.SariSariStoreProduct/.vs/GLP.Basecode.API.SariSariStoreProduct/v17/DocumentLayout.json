@@ -91,8 +91,7 @@
               "ViewState": "AQIAACAAAAAAAAAAAAASwDIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:20:54.004Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -105,8 +104,7 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:33.303Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -119,8 +117,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:19:10.355Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -130,7 +127,7 @@
               "RelativeDocumentMoniker": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\ProductController.cs",
               "ToolTip": "E:\\GitHub\\GLP.Basecode.API.SariSariStore\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\Controllers\\ProductController.cs",
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAkwBwAAAAvAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAkwB4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:23:15.95Z",
               "IsPinned": true,
@@ -147,8 +144,7 @@
               "ViewState": "AQIAAB0AAAAAAAAAAAD4vyIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T14:24:08.303Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -161,8 +157,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:49:00.63Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -175,8 +170,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:48:21.599Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -188,8 +182,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Db20127Context.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T09:23:37.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T09:23:37.138Z"
             },
             {
               "$type": "Document",
@@ -201,8 +194,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Constant\\Enums.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T07:16:10.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T07:16:10.26Z"
             },
             {
               "$type": "Document",
@@ -214,8 +206,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Properties\\launchSettings.json",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-22T06:54:01.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T06:54:01.65Z"
             },
             {
               "$type": "Document",
@@ -227,8 +218,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\MaribethStoreDbContext.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAgwBQAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T03:14:09.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T03:14:09.914Z"
             },
             {
               "$type": "Document",
@@ -240,8 +230,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-22T03:04:15.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T03:04:15.544Z"
             },
             {
               "$type": "Document",
@@ -253,8 +242,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Program.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAACwAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T17:20:52.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T17:20:52.414Z"
             },
             {
               "$type": "Document",
@@ -266,8 +254,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\CategoryInputModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:57:37.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T16:57:37.188Z"
             },
             {
               "$type": "Document",
@@ -291,8 +278,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Models\\CustomModel\\ProductInputModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T14:44:19.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T14:44:19.113Z"
             },
             {
               "$type": "Document",
@@ -304,8 +290,7 @@
               "RelativeToolTip": "GLP.Basecode.API.SariSariStoreProduct\\Models\\Product.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T14:43:56.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T14:43:56.521Z"
             }
           ]
         }
