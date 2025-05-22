@@ -5,11 +5,8 @@ WORKDIR /app
 # Copy all files into the container
 COPY . ./
 
-# Restore using the correct solution path
-RUN dotnet restore ./GLP.Basecode.API.SariSariStore/GLP.Basecode.API.SariSariStoreProduct/GLP.Basecode.API.SariSariStore.sln
-
 # Publish the correct project (fix path here)
-RUN dotnet publish ./GLP.Basecode.API.SariSariStore/GLP.Basecode.API.SariSariStoreProduct/GLP.Basecode.API.SariSariStoreProduct/GLP.Basecode.API.SariSariStoreProduct.csproj -c Release -o out
+RUN dotnet publish ./GLP.Basecode.API.SariSariStoreProduct/GLP.Basecode.API.SariSariStoreProduct/GLP.Basecode.API.SariSariStoreProduct.csproj -c Release -o out
 
 # Use the ASP.NET Core runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
