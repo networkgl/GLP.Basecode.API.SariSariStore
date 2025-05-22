@@ -26,7 +26,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
             return NotFound(new { message = errorMsg });
         }
 
-        [HttpGet("getProductByBarcode/{id}")]
+        [HttpGet("getProductByBarcode/{code}")]
         public IActionResult GetProductByBarcode(string code)
         {
             string? errorMsg, successMsg;
@@ -52,8 +52,12 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
             {
                 return Ok(new { message = successMsg });
             }
+            else if (result == ErrorCode.Duplicate)
+            {
+                return StatusCode(422, new { message = errorMsg }); //Unprocessable Entity
+            }
 
-            return NotFound(new { message = errorMsg });
+            return BadRequest(new { message = errorMsg });
         }
 
         [HttpPut("updateProduct/{id:long}")]

@@ -5143,11 +5143,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj",
+      "projectUniqueName": "E:\\GitHub\\GLP.Basecode.API.SariSariStore\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj",
       "projectName": "GLP.Basecode.API.SariSariStoreProduct",
-      "projectPath": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj",
+      "projectPath": "E:\\GitHub\\GLP.Basecode.API.SariSariStore\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj",
       "packagesPath": "C:\\Users\\Gian Lloyd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gian Lloyd\\source\\repos\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\obj\\",
+      "outputPath": "E:\\GitHub\\GLP.Basecode.API.SariSariStore\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gian Lloyd\\AppData\\Roaming\\NuGet\\NuGet.Config",

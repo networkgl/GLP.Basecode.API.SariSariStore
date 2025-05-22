@@ -7,7 +7,8 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
     public class BaseController : ControllerBase
     {
         public MaribethStoreDbContext _db = new MaribethStoreDbContext();
-
+        public Db20127Context _db1 = new Db20127Context();
+        
         public BaseRepository<Product> _productRepo;
         public BaseRepository<Category> _categoryRepo;
 

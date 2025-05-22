@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("1ccf9a4c-68a0-436c-94b9-977cc6b6d01f")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("GLP.Basecode.API.SariSariStoreProduct")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9238b93da1b09fdf34136b26ffbdf8b3e24e33ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("GLP.Basecode.API.SariSariStoreProduct")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GLP.Basecode.API.SariSariStoreProduct")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
