@@ -1,1 +1,8 @@
 Scaffold-DbContext "Data Source=.\sqlexpress;Initial Catalog=maribeth_store_db;Integrated Security=True;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models -ContextDir . -project GLP.Basecode.API.SariSariStoreProduct -f
+
+
+Scaffold-DbContext "Data Source=db20127.public.databaseasp.net;User ID=db20127;Password=7Df#K%4eg3R_;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False" Microsoft.EntityFrameworkCore.SqlServer -o Models -ContextDir . -project GLP.Basecode.API.SariSariStoreProduct -f
+
+
+//deplyed conn string
+Data Source=db20127.public.databaseasp.net;User ID=db20127;Password=7Df#K%4eg3R_;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False

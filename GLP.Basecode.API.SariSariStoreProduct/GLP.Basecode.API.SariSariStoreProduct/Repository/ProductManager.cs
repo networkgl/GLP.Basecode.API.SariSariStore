@@ -33,13 +33,13 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
             }
         }
 
-        protected Product? GetProductById(string code, out string? successMsg, out string? errorMsg)
+        protected VwGetProductBy? GetProductById(string code, out string? successMsg, out string? errorMsg)
         {
             successMsg = errorMsg = null;
 
             try
             {
-                var result = _productRepo.Table.Where(m => m.Barcode == code).SingleOrDefault();
+                var result = _db1.VwGetProductBies.Where(m => m.Barcode == code).SingleOrDefault();
 
                 if (result is null) 
                 {
@@ -89,7 +89,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
             {
                 //check if existed
                 if (IsProductExisted(model.Barcode, model.ProductName, out errorMsg))
-                    return ErrorCode.Error;
+                    return ErrorCode.Duplicate;
 
                 var newProduct = new Product()
                 {
