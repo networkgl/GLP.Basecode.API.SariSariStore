@@ -1,17 +1,17 @@
-# Use .NET SDK to build the project
+# Use the .NET 9 SDK to build the app
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-# Copy solution and project files
+# Copy all files into the container
 COPY . ./
 
-# Restore dependencies
-RUN dotnet restore GLP.Basecode.API.SariSariStore.sln
+# Restore using the solution path
+RUN dotnet restore ./GLP.Basecode.API.SariSariStoreProduct/GLP.Basecode.API.SariSariStore.sln
 
-# Build and publish the project
-RUN dotnet publish GLP.Basecode.API.SariSariStore/GLP.Basecode.API.SariSariStore.csproj -c Release -o out
+# Publish the main project
+RUN dotnet publish ./GLP.Basecode.API.SariSariStoreProduct/GLP.Basecode.API.SariSariStore/GLP.Basecode.API.SariSariStore.csproj -c Release -o out
 
-# Final image
+# Use the ASP.NET Core runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 COPY --from=build /app/out .
