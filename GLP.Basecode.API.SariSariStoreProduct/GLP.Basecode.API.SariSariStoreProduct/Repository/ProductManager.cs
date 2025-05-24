@@ -2,94 +2,123 @@
 using GLP.Basecode.API.SariSariStoreProduct.Models;
 using GLP.Basecode.API.SariSariStoreProduct.Constant;
 using GLP.Basecode.API.SariSariStoreProduct.Models.CustomModel;
+using GLP.Basecode.API.SariSariStoreProduct.Contracts;
+using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GLP.Basecode.API.SariSariStoreProduct.Repository
 {
     public class ProductManager : BaseController
     {
-        protected List<Product>? GetAll(out string? successMsg, out string? errorMsg)
+        protected async Task<OperationResult<List<Product>>> GetAll()
         {
-            successMsg = errorMsg = null;
+            var opRes = new OperationResult<List<Product>>();
 
             try
             {
-                var retVal = _productRepo.GetAll();
+                var retVal = await _productRepo.GetAll();
 
-                if (retVal is null)
+                if (retVal is null || retVal.Count == 0)
                 {
-                    errorMsg = "No products available.";
-                    return null;
+                    opRes.Status = ErrorCode.NotFound;
+                    opRes.ErrorMessage = "No products available.";
+                    opRes.Data = null;
                 }
                 else
-                    successMsg = "Product list successfully retrieved.";
-
-
-                return retVal;
-            }
-            catch (Exception e)
-            {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return null;
-            }
-        }
-
-        protected VwGetProductBy? GetProductById(string code, out string? successMsg, out string? errorMsg)
-        {
-            successMsg = errorMsg = null;
-
-            try
-            {
-                var result = _db1.VwGetProductBies.Where(m => m.Barcode == code).SingleOrDefault();
-
-                if (result is null) 
                 {
-                    errorMsg = $"Product with barcode {code} does not exist.";
-                    return null;
+                    opRes.Status = ErrorCode.Success;
+                    opRes.SuccessMessage = "Product list successfully retrieved.";
+                    opRes.Data = retVal;
                 }
 
-
-                successMsg = "Product details successfully retrieved";
-                return result;
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return null;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                opRes.Data = null;
+                return opRes;
             }
         }
 
-        private bool IsProductExisted(string barcode, string productName, out string? errorMsg)
+        protected async Task<OperationResult<VwGetProductBy?>> GetProductById(string code)
         {
-            errorMsg = null;
+            var opRes = new OperationResult<VwGetProductBy?>();
 
             try
             {
-                var exists = _productRepo.GetAll().Any(c =>
-                             c.Barcode == barcode ||
-                             c.ProductName == productName         
-                         );
+                using (var db = new Db20127Context())
+                {
+                    var result = await db.VwGetProductBies.Where(m => m.Barcode == code).SingleOrDefaultAsync();
 
-                if (exists)
-                    errorMsg = "The same product name or barcode already added.";
+                    if (result is null)
+                    {
+                        opRes.Status = ErrorCode.NotFound;
+                        opRes.ErrorMessage = $"Product with barcode {code} does not exist.";
+                        opRes.Data = null;
+                    }
 
-                return exists;
+                    opRes.Status = ErrorCode.Success;
+                    opRes.SuccessMessage = "Product details successfully retrieved";
+                    opRes.Data = result;
+                    return opRes;
+                }    
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return true; //to prevent inserting when error
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                opRes.Data = null;
+                return opRes;
             }
         }
 
-        protected ErrorCode Add(ProductInputModel model, out string? successMsg, out string? errorMsg)
+        private async Task<OperationResult<bool>> IsProductExisted(string barcode, string productName)
         {
-            successMsg = errorMsg = null;
+            var opRes = new OperationResult<bool>();
 
             try
             {
+                using (var db = new Db20127Context())
+                {
+                    var exists = await db.Products.AnyAsync(c => c.Barcode == barcode || c.ProductName == productName);
+
+                    if (exists)
+                    {
+                        opRes.Status = ErrorCode.Duplicate;
+                        opRes.ErrorMessage = "The same product name or barcode already added.";
+                        opRes.Data = true;
+                        return opRes;
+                    }
+
+                    opRes.Data = false;
+                    return opRes;
+                }
+            }
+            catch (Exception e)
+            {
+                opRes.Status= ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                opRes.Data = true;
+                return opRes;
+            }
+        }
+
+        protected async Task<OperationResult<ErrorCode>> Add(ProductInputModel model)
+        {
+            var opRes = new OperationResult<ErrorCode>();
+
+            try
+            {
+                var objReturn = await IsProductExisted(model.Barcode, model.ProductName);
                 //check if existed
-                if (IsProductExisted(model.Barcode, model.ProductName, out errorMsg))
-                    return ErrorCode.Duplicate;
+                if (objReturn.Data)
+                {
+                    opRes.Status = objReturn.Status;
+                    opRes.ErrorMessage = objReturn.ErrorMessage;
+                    return opRes;
+                }
 
                 var newProduct = new Product()
                 {
@@ -99,88 +128,106 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
                     CategoryId = model.CategoryId
                 };
 
-                var result = _productRepo.Create(newProduct, out successMsg, out errorMsg);
-                if (result == ErrorCode.Error)
-                    return ErrorCode.Error;
-                
-                successMsg = "Product details successfully added.";
-                return ErrorCode.Success;
+                var result = await _productRepo.Create(newProduct);
+                if (result.Status == ErrorCode.Error)
+                {
+                    opRes.Status = result.Status;
+                    opRes.ErrorMessage = result.ErrorMessage;
+                    return opRes;
+                }
+
+                opRes.Status = result.Status;
+                opRes.SuccessMessage = "Product details successfully added.";
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return ErrorCode.Error;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                return opRes;
             }
         }
 
-        protected ErrorCode Update(long id, ProductInputModel model, out string? successMsg, out string? errorMsg)
+        protected async Task<OperationResult<ErrorCode>> Update(long id, ProductInputModel model)
         {
-            successMsg = errorMsg = null;
+            var opRes = new OperationResult<ErrorCode>();
 
             try
             {
-                var updatedEntity = _productRepo.Get(id, out errorMsg);
+                var updatedEntity = await _productRepo.Get(id);
 
-                if (updatedEntity is null)
+                if (updatedEntity.Data is null)
                 {
-                    errorMsg = $"Product with ID {id} does not exist or has already been deleted.";
-                    return ErrorCode.NotFound;
+                    opRes.Status = updatedEntity.Status;
+                    opRes.ErrorMessage = $"Product with ID {id} does not exist or has already been deleted.";
+                    return opRes;
                 }
 
                 // Manually clone the original before modifying it to reduce twice calling of DB
                 var oldEntity = new Product()
                 {
-                    Barcode = updatedEntity.Barcode,
-                    ProductName = updatedEntity.ProductName,
-                    Price = updatedEntity.Price,
-                    CategoryId = updatedEntity.CategoryId
+                    Barcode = updatedEntity.Data.Barcode,
+                    ProductName = updatedEntity.Data.ProductName,
+                    Price = updatedEntity.Data.Price,
+                    CategoryId = updatedEntity.Data.CategoryId
                 };
 
-                updatedEntity.Barcode = model.Barcode;
-                updatedEntity.ProductName = model.ProductName;
-                updatedEntity.Price = model.Price;
-                updatedEntity.CategoryId = model.CategoryId;
+                updatedEntity.Data.Barcode = model.Barcode;
+                updatedEntity.Data.ProductName = model.ProductName;
+                updatedEntity.Data.Price = model.Price;
+                updatedEntity.Data.CategoryId = model.CategoryId;
                
 
-                var result = _productRepo.Update(oldEntity, updatedEntity, out successMsg, out errorMsg);
-                if (result == ErrorCode.Error)
-                    return ErrorCode.Error;
+                var result = await _productRepo.Update(oldEntity, updatedEntity.Data);
+                if (result.Status == ErrorCode.Error)
+                {
+                    opRes.Status = result.Status;
+                }
 
-                successMsg = "Product details successfully updated";
-                return ErrorCode.Success;
+                opRes.Status = result.Status;
+                opRes.SuccessMessage = "Product details successfully updated";
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return ErrorCode.Error;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                return opRes;
             }
         }
 
-        protected ErrorCode Delete(long id, out string? successMsg, out string? errorMsg)
+        protected async Task<OperationResult<ErrorCode>> Delete(long id)
         {
-            successMsg = errorMsg = null;
+            var opRes = new OperationResult<ErrorCode>();
 
             try
             {
-                var entity = _productRepo.Get(id, out errorMsg);
+                var entity = await _productRepo.Get(id);
 
-                if (entity is null)
+                if (entity.Data is null)
                 {
-                    errorMsg = $"Product with ID {id} does not exist or has already been deleted.";
-                    return ErrorCode.NotFound;
+                    opRes.Status = entity.Status;
+                    opRes.ErrorMessage = $"Product with ID {id} does not exist or has already been deleted.";
+                    return opRes;
                 }
 
-                var result = _productRepo.Delete(id, out successMsg, out errorMsg);
-                if (result == ErrorCode.Error)
-                    return ErrorCode.Error;
+                var result = await _productRepo.Delete(id);
+                if (result.Status == ErrorCode.Error)
+                {
+                    opRes.Status = result.Status;
+                    opRes.ErrorMessage = result.ErrorMessage;
+                    return opRes;
+                }
 
-                successMsg = "Product details successfully deleted.";
-                return ErrorCode.Success;
+                opRes.Status = result.Status;
+                opRes.SuccessMessage = "Product details successfully deleted.";
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return ErrorCode.Error;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                return opRes;
             }
         }
 
