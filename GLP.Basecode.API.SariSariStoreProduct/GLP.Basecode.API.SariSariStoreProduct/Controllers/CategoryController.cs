@@ -11,34 +11,42 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
     public class CategoryController : CategoryManager
     {
         [HttpGet("getAllCategory")]
-        public IActionResult GetAllCategory()
+        public async Task<IActionResult> GetAllCategory()
         {
-            string? errorMsg, successMsg;
+            var result = await GetAll();
 
-            var result = GetAllCategory(out successMsg, out errorMsg);
-            if (result is not null)
+            switch (result.Status)
             {
-                return Ok(new { data = result, message = successMsg });
+                case ErrorCode.Success:
+                    return Ok(new { data = result.Data, message = result.SuccessMessage });
+                case ErrorCode.Error:
+                    return BadRequest(new { message = result.ErrorMessage });
+                case ErrorCode.NotFound:
+                    return NotFound(new { message = result.ErrorMessage });
+                default:
+                    return StatusCode(500, new { message = "Unhandled error state." });
             }
-
-            return NotFound(new { message = errorMsg });
         }
 
         [HttpPost("addCategory")]
-        public IActionResult AddCategory([FromBody] CategoryInputModel input)
+        public async Task<IActionResult> AddCategory([FromBody] CategoryInputModel input)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            string? errorMsg, successMsg;
+            var result = await Add(input);
 
-            var result = Add(input, out successMsg, out errorMsg);
-            if (result == ErrorCode.Success)
+            switch (result.Status)
             {
-                return Ok(new { message = successMsg });
+                case ErrorCode.Success:
+                    return Ok(new { message = result.SuccessMessage });
+                case ErrorCode.Error:
+                    return BadRequest(new { message = result.ErrorMessage });
+                case ErrorCode.Duplicate:
+                    return StatusCode(422, new { message = result.ErrorMessage }); //Unprocessable Entity
+                default:
+                    return StatusCode(500, new { message = "Unhandled error state." });
             }
-
-            return NotFound(new { message = errorMsg });
         }
     }
 }

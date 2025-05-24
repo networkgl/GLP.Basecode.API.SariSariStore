@@ -2,85 +2,114 @@
 using GLP.Basecode.API.SariSariStoreProduct.Models;
 using GLP.Basecode.API.SariSariStoreProduct.Constant;
 using GLP.Basecode.API.SariSariStoreProduct.Models.CustomModel;
+using GLP.Basecode.API.SariSariStoreProduct.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace GLP.Basecode.API.SariSariStoreProduct.Repository
 {
     public class CategoryManager : BaseController
     {
-        private bool IsCategoryExisted(string categoryName, out string? errorMsg)
+        private async Task<OperationResult<bool>> IsCategoryExisted(string categoryName)
         {
-            errorMsg = null;
+            var opRes = new OperationResult<bool>();
 
             try
             {
-                var exists = _categoryRepo.GetAll().Any(c =>
-                             c.CategoryName == categoryName
-                         );
+                using (var db = new Db20127Context())
+                {
+                    var exists = await db.Categories.AnyAsync(c => c.CategoryName == categoryName);
 
-                if (exists)
-                    errorMsg = "The same category name already added.";
+                    if (exists)
+                    {
+                        opRes.Status = ErrorCode.Duplicate;
+                        opRes.ErrorMessage = "The same category name or barcode already added.";
+                        opRes.Data = true;
+                        return opRes;
+                    }
 
-                return exists;
+                    opRes.Data = false;
+                    return opRes;
+                }
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return true; //to prevent inserting when error
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                opRes.Data = true;
+                return opRes;
             }
         }
 
-        protected List<Category>? GetAllCategory(out string? successMsg, out string? errorMsg)
+        protected async Task<OperationResult<List<Category>?>> GetAll()
         {
-            successMsg = errorMsg = null;
+            var opRes = new OperationResult<List<Category>?>();
 
             try
             {
-                var retVal = _categoryRepo.GetAll();
+                var retVal = await _categoryRepo.GetAll();
 
-                if (retVal is null)
+                if (retVal is null || retVal.Count == 0)
                 {
-                    errorMsg = "No categories available.";
-                    return null;
+                    opRes.Status = ErrorCode.NotFound;
+                    opRes.ErrorMessage = "No categories available.";
+                    opRes.Data = null;
+                    return opRes;
                 }
                 else
-                    successMsg = "Category list successfully retrieved.";
+                {
+                    opRes.Status = ErrorCode.Success;
+                    opRes.SuccessMessage = "Category list successfully retrieved.";
+                    opRes.Data = retVal;
+                }
 
-
-                return retVal;
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return null;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                opRes.Data = null;
+                return opRes;
             }
         }
 
-        protected ErrorCode Add(CategoryInputModel model, out string? successMsg, out string? errorMsg)
+        protected async Task<OperationResult<ErrorCode>> Add(CategoryInputModel model)
         {
-            successMsg = errorMsg = null;
+            var opRes = new OperationResult<ErrorCode>();
 
             try
             {
                 //check if existed
-                if (IsCategoryExisted(model.CategoryName, out errorMsg))
-                    return ErrorCode.Error;
+                var objReturn = await IsCategoryExisted(model.CategoryName);
+                if (objReturn.Data)
+                {
+                    opRes.Status = objReturn.Status;
+                    opRes.ErrorMessage = objReturn.ErrorMessage;
+                    return opRes;
+                }
 
                 var newCategory = new Category()
                 {
                     CategoryName = model.CategoryName,
                 };
 
-                var result = _categoryRepo.Create(newCategory, out successMsg, out errorMsg);
-                if (result == ErrorCode.Error)
-                    return ErrorCode.Error;
+                var result = await _categoryRepo.Create(newCategory);
+                if (result.Status == ErrorCode.Error)
+                {
+                    opRes.Status = objReturn.Status;
+                    opRes.ErrorMessage = objReturn.ErrorMessage;
+                    return opRes;
+                }
 
-                successMsg = "Category details successfully added.";
-                return ErrorCode.Success;
+                opRes.Status = result.Status;
+                opRes.SuccessMessage = "Category details successfully added.";
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return ErrorCode.Error;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                return opRes;
             }
         }
 

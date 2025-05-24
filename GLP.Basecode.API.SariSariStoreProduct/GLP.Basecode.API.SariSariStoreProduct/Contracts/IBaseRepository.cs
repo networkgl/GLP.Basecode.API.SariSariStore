@@ -4,11 +4,11 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Contracts
 {
     public interface IBaseRepository<T>
     {
-        T? Get(object id, out String? returnMsg);
-        List<T> GetAll();
-        ErrorCode Create(T entity, out String successMsg, out String? errorMsg);
-        ErrorCode Update(T oldEntity, T newEntity, out String successMsg, out String? errorMsg);
-        ErrorCode Delete(object id, out String successMsg, out String? errorMsg);
-
+        Task<OperationResult<T?>> Get(object id);
+        Task<List<T>> GetAll();
+        Task<OperationResult<ErrorCode>> Create(T entity);
+        Task<OperationResult<ErrorCode>> Update(T oldEntity, T newEntity);
+        Task<OperationResult<ErrorCode>> Delete(object id);
     }
+
 }

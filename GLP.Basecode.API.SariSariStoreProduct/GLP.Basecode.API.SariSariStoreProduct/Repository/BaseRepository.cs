@@ -18,98 +18,109 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
             _table = _db.Set<T>();
         }
 
-        public T? Get(object id, out string? returnMsg)
+        public async Task<OperationResult<T?>> Get(object id)
         {
-            returnMsg = string.Empty;
-
+            var opRes = new OperationResult<T?>();
             try
             {
-                var entity = _table.Find(id);
+                var entity = await _table.FindAsync(id);
 
                 if (entity == null)
                 {
-                    returnMsg = $"No entity found for ID: {id}";
-                    return null;
+                    opRes.Status = ErrorCode.NotFound;
+                    opRes.ErrorMessage = $"No entity found for ID: {id}";
+                    opRes.Data = null;
+                    return opRes;
                 }
 
-                return entity;
+                opRes.Status = ErrorCode.Success;
+                opRes.SuccessMessage = "Entity successfully found.";
+                opRes.Data = entity;
+                return opRes;
             }
             catch (Exception ex)
             {
-                returnMsg = GetInnermostExceptionMessage(ex);
-                return null;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(ex);
+                opRes.Data = null;
+                return opRes;
             }
         }
 
-
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return _table.ToList();
+            return await _table.ToListAsync();
         }
 
-        public ErrorCode Create(T t, out string successMsg, out string? errorMsg)
+        public async Task<OperationResult<ErrorCode>> Create(T t)
         {
-            errorMsg = successMsg = string.Empty;
-
+            var opRes = new OperationResult<ErrorCode>();
             try
             {
-                _table.Add(t);
-                _db.SaveChanges();
-                successMsg = "Success";
+                await _table.AddAsync(t);
+                await _db.SaveChangesAsync();
+                opRes.Status = ErrorCode.Success;
+                opRes.SuccessMessage = "Success";
 
-                return ErrorCode.Success;
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return ErrorCode.Error;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                return opRes;
             }
 
         }
 
-        public ErrorCode Update(T oldEntity, T updatedEntity, out string successMsg, out string? errorMsg)
+        public async Task<OperationResult<ErrorCode>> Update(T oldEntity, T updatedEntity)
         {
-            errorMsg = successMsg = string.Empty;
+            var opRes = new OperationResult<ErrorCode>();
             try
             {
                 _db.Entry(oldEntity).CurrentValues.SetValues(updatedEntity);
-                _db.SaveChanges();
-                successMsg = "Updated";
+                await _db.SaveChangesAsync();
+                opRes.Status = ErrorCode.Success;
+                opRes.SuccessMessage = "Updated";
 
-                return ErrorCode.Success;
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return ErrorCode.Error;
+                opRes.Status = ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                return opRes;
             }
         }
 
-        public ErrorCode Delete(object id, out string successMsg, out string? errorMsg)
+        public async Task<OperationResult<ErrorCode>> Delete(object id)
         {
-            errorMsg = successMsg = string.Empty;
-
+            var opRes = new OperationResult<ErrorCode>();
             try
             {
-                var obj = _table.Find(id);
+                var obj = await _table.FindAsync(id);
                 if (obj is null)
-                    return ErrorCode.NotFound;
+                {
+                    opRes.Status = ErrorCode.NotFound;
+                    opRes.ErrorMessage = $"Entity with ID {id} does not exist or has already been deleted.";
+                    return opRes;
+                }
 
                 _table.Remove(obj);
-                _db.SaveChanges();
+                await _db.SaveChangesAsync();
+                opRes.Status = ErrorCode.Success;
+                opRes.SuccessMessage = "Deleted";
 
-                successMsg = "Deleted";
-
-                return ErrorCode.Success;
+                return opRes;
             }
             catch (Exception e)
             {
-                errorMsg = GetInnermostExceptionMessage(e);
-                return ErrorCode.Error;
+                opRes.Status= ErrorCode.Error;
+                opRes.ErrorMessage = GetInnermostExceptionMessage(e);
+                return opRes;
             }
         }
 
-        protected string? GetInnermostExceptionMessage(Exception ex)
+        private string? GetInnermostExceptionMessage(Exception ex)
         {
             if (ex == null) return null;
 
@@ -119,7 +130,6 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
             }
             return ex.Message;
         }
-
 
     }
 

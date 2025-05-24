@@ -13,82 +13,81 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
     {
 
         [HttpGet("getAllProduct")]
-        public IActionResult GetAllProduct()
+        public async Task<IActionResult> GetAllProduct()
         {
-            string? errorMsg, successMsg;
+            var result = await GetAll();
 
-            var result = GetAll(out successMsg, out errorMsg);
-            if (result is not null)
+            switch (result.Status)
             {
-                return Ok(new { data = result, message = successMsg });
+                case ErrorCode.Success:
+                    return Ok(new { data = result.Data, message = result.SuccessMessage });
+                case ErrorCode.Error:
+                    return BadRequest(new { message = result.ErrorMessage });
+                case ErrorCode.NotFound:
+                    return NotFound(new { message = result.ErrorMessage });
+                default:
+                    return StatusCode(500, new { message = "Unhandled error state." });
             }
-
-            return NotFound(new { message = errorMsg });
         }
 
         [HttpGet("getProductByBarcode/{code}")]
-        public IActionResult GetProductByBarcode(string code)
+        public async Task<IActionResult> GetProductByBarcode(string code)
         {
-            string? errorMsg, successMsg;
-            var result = GetProductById(code, out successMsg, out errorMsg);
-            if (result is not null)
+            var result = await GetProductById(code);
+            if (result.Status == ErrorCode.Success && result.Data is not null)
             {
-                return Ok(new { data = result, message = successMsg });
+                return Ok(new { data = result.Data, message = result.SuccessMessage });
             }
 
-            return NotFound(new { message = errorMsg });
+            return NotFound(new { message = result.ErrorMessage });
         }
 
         [HttpPost("addProduct")]
-        public IActionResult AddProduct([FromBody] ProductInputModel input)
+        public async Task<IActionResult> AddProduct([FromBody] ProductInputModel input)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            string? errorMsg, successMsg;
+            var result = await Add(input);
 
-            var result = Add(input, out successMsg, out errorMsg);
-            if (result == ErrorCode.Success)
+            switch (result.Status)
             {
-                return Ok(new { message = successMsg });
+                case ErrorCode.Success:
+                    return Ok(new { message = result.SuccessMessage });
+                case ErrorCode.Error:
+                    return BadRequest(new { message = result.ErrorMessage });
+                case ErrorCode.Duplicate:
+                    return StatusCode(422, new { message = result.ErrorMessage }); //Unprocessable Entity
+                default:
+                    return StatusCode(500, new { message = "Unhandled error state." });
             }
-            else if (result == ErrorCode.Duplicate)
-            {
-                return StatusCode(422, new { message = errorMsg }); //Unprocessable Entity
-            }
-
-            return BadRequest(new { message = errorMsg });
         }
 
         [HttpPut("updateProduct/{id:long}")]
-        public IActionResult UpdateProduduct(long id,[FromBody] ProductInputModel input)
+        public async Task<IActionResult> UpdateProduduct(long id,[FromBody] ProductInputModel input)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            string? errorMsg, successMsg;
-
-            var result = Update(id, input, out successMsg, out errorMsg);
-            if (result == ErrorCode.Success)
+            var result = await Update(id, input);
+            if (result.Status == ErrorCode.Success)
             {
-                return Ok(new { message = successMsg });
+                return Ok(new { message = result.SuccessMessage });
             }
 
-            return NotFound(new { message = errorMsg });
+            return NotFound(new { message = result.ErrorMessage });
         }
 
-        [HttpDelete("deleteProduct{id:long}")]
-        public IActionResult DeleteProduct(long id)
+        [HttpDelete("deleteProduct/{id:long}")]
+        public async Task<IActionResult> DeleteProduct(long id)
         {
-            string? errorMsg, successMsg;
-
-            var result = Delete(id, out successMsg, out errorMsg);
-            if (result == ErrorCode.Success)
+            var result = await Delete(id);
+            if (result.Status == ErrorCode.Success)
             {
-                return Ok(new { message = successMsg });
+                return Ok(new { message = result.SuccessMessage });
             }
 
-            return NotFound(new { message = errorMsg });
+            return NotFound(new { message = result.ErrorMessage });
         }
 
     }
