@@ -45,6 +45,7 @@ public partial class Db20127Context : DbContext
 
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Barcode)
+                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("barcode");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
@@ -69,6 +70,7 @@ public partial class Db20127Context : DbContext
                 .ToView("vw_getProductBy");
 
             entity.Property(e => e.Barcode)
+                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("barcode");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
@@ -79,6 +81,7 @@ public partial class Db20127Context : DbContext
             entity.Property(e => e.Price)
                 .HasColumnType("money")
                 .HasColumnName("price");
+            entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.ProductName)
                 .HasMaxLength(100)
                 .IsUnicode(false)

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GLP.Basecode.API.SariSariStoreProduct")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08099872e0927415cd90fc373986b21254ed7d58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24256a9b74c8371ac99df84965eb1592d8cbb726")]
 [assembly: System.Reflection.AssemblyProductAttribute("GLP.Basecode.API.SariSariStoreProduct")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GLP.Basecode.API.SariSariStoreProduct")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

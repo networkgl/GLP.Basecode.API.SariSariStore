@@ -40,8 +40,6 @@ public partial class MaribethStoreDbContext : DbContext
         modelBuilder.Entity<Product>(entity =>
         {
             entity.ToTable("Product");
-
-            entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Barcode)
                 .IsUnicode(false)
                 .HasColumnName("barcode");

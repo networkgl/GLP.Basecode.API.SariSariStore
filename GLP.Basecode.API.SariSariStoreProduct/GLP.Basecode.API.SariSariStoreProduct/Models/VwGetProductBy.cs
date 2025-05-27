@@ -5,6 +5,8 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Models;
 
 public partial class VwGetProductBy
 {
+    public long ProductId { get; set; }
+
     public long CategoryId { get; set; }
 
     public string Barcode { get; set; } = null!;
