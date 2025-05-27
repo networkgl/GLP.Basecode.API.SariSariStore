@@ -2,7 +2,7 @@
 
 namespace GLP.Basecode.API.SariSariStoreProduct.Contracts
 {
-    public interface IBaseRepository<T>
+    public interface IBaseRepository<T> 
     {
         Task<OperationResult<T?>> Get(object id);
         Task<List<T>> GetAll();

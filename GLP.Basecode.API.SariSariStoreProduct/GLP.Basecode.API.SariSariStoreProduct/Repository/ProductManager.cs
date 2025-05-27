@@ -10,25 +10,30 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
 {
     public class ProductManager : BaseController
     {
-        protected async Task<OperationResult<List<Product>>> GetAll()
+        protected async Task<OperationResult<List<VwGetProductBy>>> GetAll()
         {
-            var opRes = new OperationResult<List<Product>>();
+            var opRes = new OperationResult<List<VwGetProductBy>>();
 
             try
             {
-                var retVal = await _productRepo.GetAll();
+                //var retVal = await _productRepo.GetAll();
 
-                if (retVal is null || retVal.Count == 0)
+                using (var db = new Db20127Context())
                 {
-                    opRes.Status = ErrorCode.NotFound;
-                    opRes.ErrorMessage = "No products available.";
-                    opRes.Data = null;
-                }
-                else
-                {
-                    opRes.Status = ErrorCode.Success;
-                    opRes.SuccessMessage = "Product list successfully retrieved.";
-                    opRes.Data = retVal;
+                    var retVal = await db.VwGetProductBies.ToListAsync();
+                    if (retVal is null || retVal.Count == 0)
+                    {
+                        opRes.Status = ErrorCode.NotFound;
+                        opRes.ErrorMessage = "No products available.";
+                        opRes.Data = null;
+                    }
+                    else
+                    {
+                        opRes.Status = ErrorCode.Success;
+                        opRes.SuccessMessage = "Product list successfully retrieved.";
+                        opRes.Data = retVal;
+                    }
+
                 }
 
                 return opRes;
@@ -51,7 +56,6 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
                 using (var db = new Db20127Context())
                 {
                     var result = await db.VwGetProductBies.Where(m => m.Barcode == code).SingleOrDefaultAsync();
-
                     if (result is null)
                     {
                         opRes.Status = ErrorCode.NotFound;
@@ -83,7 +87,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
                 using (var db = new Db20127Context())
                 {
                     var exists = await db.Products.AnyAsync(c => c.Barcode == barcode || c.ProductName == productName);
-
+                    
                     if (exists)
                     {
                         opRes.Status = ErrorCode.Duplicate;

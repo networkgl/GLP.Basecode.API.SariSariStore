@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EYL+MkxadwU=",
+  "dgSpecHash": "c8X+tgbCMLs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gian Lloyd\\Documents\\GitHub\\GLP.Basecode.API.SariSariStore\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj",
+  "projectFilePath": "E:\\GitHub\\GLP.Basecode.API.SariSariStore\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct\\GLP.Basecode.API.SariSariStoreProduct.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gian Lloyd\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Gian Lloyd\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
