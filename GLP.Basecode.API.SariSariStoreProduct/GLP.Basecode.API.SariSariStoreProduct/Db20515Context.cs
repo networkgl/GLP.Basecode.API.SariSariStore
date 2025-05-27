@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GLP.Basecode.API.SariSariStoreProduct;
 
-public partial class Db20127Context : DbContext
+public partial class Db20515Context : DbContext
 {
-    public Db20127Context()
+    public Db20515Context()
     {
     }
 
-    public Db20127Context(DbContextOptions<Db20127Context> options)
+    public Db20515Context(DbContextOptions<Db20515Context> options)
         : base(options)
     {
     }
@@ -24,7 +24,7 @@ public partial class Db20127Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=db20127.public.databaseasp.net;User ID=db20127;Password=7Df#K%4eg3R_;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        => optionsBuilder.UseSqlServer("Data Source=db20515.public.databaseasp.net;User ID=db20515;Password=3s=EjF8#R-q6;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -45,7 +45,6 @@ public partial class Db20127Context : DbContext
 
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Barcode)
-                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("barcode");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
@@ -70,7 +69,6 @@ public partial class Db20127Context : DbContext
                 .ToView("vw_getProductBy");
 
             entity.Property(e => e.Barcode)
-                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("barcode");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");

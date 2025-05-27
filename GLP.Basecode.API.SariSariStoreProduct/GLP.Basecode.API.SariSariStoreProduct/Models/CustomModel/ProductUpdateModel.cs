@@ -2,9 +2,8 @@
 
 namespace GLP.Basecode.API.SariSariStoreProduct.Models.CustomModel
 {
-    public class ProductInputModel
+    public class ProductUpdateModel
     {
-
         [Required]
         public string Barcode { get; set; } = null!;
 
@@ -14,9 +13,5 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Models.CustomModel
         [Required]
         public decimal Price { get; set; }
 
-        [Required]
-        public long CategoryId { get; set; }
-        
     }
-
 }

@@ -64,7 +64,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
         }
 
         [HttpPut("updateProduct/{id:long}")]
-        public async Task<IActionResult> UpdateProduduct(long id,[FromBody] ProductInputModel input)
+        public async Task<IActionResult> UpdateProduduct(long id,[FromBody] ProductUpdateModel input)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

@@ -14,7 +14,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
 
         public BaseRepository()
         {
-            _db = new MaribethStoreDbContext();
+            _db = new Db20515Context();
             _table = _db.Set<T>();
         }
 

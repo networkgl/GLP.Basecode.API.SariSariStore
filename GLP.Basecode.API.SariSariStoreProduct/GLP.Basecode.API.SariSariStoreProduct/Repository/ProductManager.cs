@@ -18,7 +18,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
             {
                 //var retVal = await _productRepo.GetAll();
 
-                using (var db = new Db20127Context())
+                using (var db = new Db20515Context())
                 {
                     var retVal = await db.VwGetProductBies.ToListAsync();
                     if (retVal is null || retVal.Count == 0)
@@ -53,7 +53,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
 
             try
             {
-                using (var db = new Db20127Context())
+                using (var db = new Db20515Context())
                 {
                     var result = await db.VwGetProductBies.Where(m => m.Barcode == code).SingleOrDefaultAsync();
                     if (result is null)
@@ -84,7 +84,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
 
             try
             {
-                using (var db = new Db20127Context())
+                using (var db = new Db20515Context())
                 {
                     var exists = await db.Products.AnyAsync(c => c.Barcode == barcode || c.ProductName == productName);
                     
@@ -152,7 +152,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
             }
         }
 
-        protected async Task<OperationResult<ErrorCode>> Update(long id, ProductInputModel model)
+        protected async Task<OperationResult<ErrorCode>> Update(long id, ProductUpdateModel model)
         {
             var opRes = new OperationResult<ErrorCode>();
 
@@ -179,7 +179,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
                 updatedEntity.Data.Barcode = model.Barcode;
                 updatedEntity.Data.ProductName = model.ProductName;
                 updatedEntity.Data.Price = model.Price;
-                updatedEntity.Data.CategoryId = model.CategoryId;
+                //updatedEntity.Data.CategoryId = model.CategoryId;
                
 
                 var result = await _productRepo.Update(oldEntity, updatedEntity.Data);

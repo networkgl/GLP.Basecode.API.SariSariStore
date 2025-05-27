@@ -15,7 +15,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Repository
 
             try
             {
-                using (var db = new Db20127Context())
+                using (var db = new Db20515Context())
                 {
                     var exists = await db.Categories.AnyAsync(c => c.CategoryName == categoryName);
 
