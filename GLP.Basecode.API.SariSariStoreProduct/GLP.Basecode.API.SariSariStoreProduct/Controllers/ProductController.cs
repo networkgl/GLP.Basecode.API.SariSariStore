@@ -24,7 +24,7 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
                 case ErrorCode.Error:
                     return BadRequest(new { message = result.ErrorMessage });
                 case ErrorCode.NotFound:
-                    return NotFound(new { message = result.ErrorMessage });
+                    return Ok(new { message = result.ErrorMessage });
                 default:
                     return StatusCode(500, new { message = "Unhandled error state." });
             }
