@@ -3,6 +3,7 @@ using GLP.Basecode.API.SariSariStoreProduct.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using GLP.Basecode.API.SariSariStoreProduct.Constant;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
@@ -11,7 +12,6 @@ namespace GLP.Basecode.API.SariSariStoreProduct.Controllers
     [ApiController]
     public class ProductController : ProductManager
     {
-
         [HttpGet("getAllProduct")]
         public async Task<IActionResult> GetAllProduct()
         {

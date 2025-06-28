@@ -1,0 +1,9 @@
+# Sensitive config files
+database.txt                 ✅ Ignores this specific file
+scaffold.txt                 ✅ Ignores this specific file
+*.secret                     ✅ Ignores all files with `.secret` extension
+*.env                        ✅ Ignores all `.env` files
+*.bak                        ✅ Ignores all `.bak` files (e.g., DB backups)
+config/*.txt                 ✅ Ignores all `.txt` files inside `config/` folder only
+appsettings.Development.json ✅ Ignores your dev-only config
+secrets.json                ✅ Ignores user secrets
